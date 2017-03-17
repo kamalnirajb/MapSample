@@ -76,6 +76,7 @@
                             <constraint firstItem="2Rp-f3-BN3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="zth-Ia-Vzd"/>
                         </constraints>
                     </view>
+
                     <connections>
                         <outlet property="btnBeginWalk" destination="2Rp-f3-BN3" id="Lno-Gy-BIE"/>
                         <outlet property="lblDistanceTravelled" destination="LJ0-Na-HlO" id="Nqp-2I-CIr"/>

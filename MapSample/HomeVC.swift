@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreMotion
 
-class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
+class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     // UI variables
     @IBOutlet weak var mapview: MKMapView!
@@ -32,7 +33,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     // Distance Filter for minimum distance to fetch the location update
     let distanceFilter = 5
-    
+    //// niraj
     // Time interval to fetch a new location(seconds)
     let timeFilter = 10.0
     
@@ -51,6 +52,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     // Total distance covered
     var totalDistance:CLLocationDistance = 0.0
     
+    // NIraj
     // Time in seconds to decide if the distance to be calculated
     let validTimeInterval = 3.0
     
@@ -68,11 +70,23 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
                 self.locationManager.requestLocation()
             }
         })
+        setAccelerometer()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setAccelerometer() {
+        let cmmanager:CMMotionManager = CMMotionManager()
+        if cmmanager.isGyroAvailable, cmmanager.isGyroActive {
+            print(cmmanager.gyroData)
+        }else {
+            print("Gyro not available")
+        }
+        
     }
     
     func getInterval() -> Int {

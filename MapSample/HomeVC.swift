@@ -53,7 +53,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     // Time in seconds to decide if the distance to be calculated
     let validTimeInterval = 3.0
-    
+    //// niraj
     // Valid distance to stop
     let validDistance = 3.0
     
